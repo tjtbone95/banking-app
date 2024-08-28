@@ -91,9 +91,7 @@ const AuthForm = ({ type }: { type: string }) => {
             height={34}
             alt="Vault logo"
           />
-          <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
-            VAULT
-          </h1>
+          <h1 className="text-26 font-roboto font-black text-black-1">VAULT</h1>
         </Link>
 
         <div className="flex flex-col gap-1 md:gap-3">
