@@ -2,12 +2,11 @@ import {withSentryConfig} from '@sentry/nextjs';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     typescript: {
-        ignoreBuildErrors: true
-    }, eslint: 
-    {ignoreDuringBuilds: true}
-};
-
-module.exports = {
+      ignoreBuildErrors: true,
+    },
+    eslint: {
+      ignoreDuringBuilds: true,
+    },
     async redirects() {
       return [
         {
@@ -15,10 +14,11 @@ module.exports = {
           destination: '/sign-in',
           permanent: false,
         },
-      ]
+      ];
     },
-  }
+  };
   
+
 
 export default withSentryConfig(nextConfig, {
 // For all available options, see:
