@@ -7,6 +7,7 @@ import { sidebarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Footer from "./Footer";
+import PlaidLink from "./PlaidLink";
 
 const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
@@ -14,15 +15,15 @@ const Sidebar = ({ user }: SiderbarProps) => {
   return (
     <section className="sidebar">
       <nav className="flex flex-col gap-4">
-        <Link href="/" className="mb-12 cursor-pointer items-center gap-2">
+        <Link href="/" className="mb-12 cursor-pointer flex items-center gap-2">
           <Image
             src="/icons/logo.svg"
             width={34}
             height={34}
-            alt="Horizon logo"
+            alt="Vault logo"
             className="size=[24] max-xl:size-14"
           ></Image>
-          <h1 className="sidebar-logo">Horizon</h1>
+          <h1 className="sidebar-logo">VAULT</h1>
         </Link>
         {sidebarLinks.map((item) => {
           const isActive =
@@ -54,7 +55,8 @@ const Sidebar = ({ user }: SiderbarProps) => {
             </Link>
           );
         })}
-        USER
+
+        <PlaidLink user={user}></PlaidLink>
       </nav>
       <Footer user={user}></Footer>
     </section>
