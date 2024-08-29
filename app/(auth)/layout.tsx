@@ -6,7 +6,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex min-h-screen w-full justify-between font-inter">
+    <main className="flex min-h-screen w-full justify-between font-roboto">
       {children}
       <div className="auth-asset flex items-center justify-center w-full h-full">
         <div className="relative w-full h-full">
@@ -14,7 +14,7 @@ export default function RootLayout({
             src="/icons/auth-image-landscape.svg"
             alt="Auth image"
             layout="fill"
-            objectFit="cover" // or "cover", "fill" depending on the desired behavior
+            objectFit="cover"
           />
         </div>
       </div>
