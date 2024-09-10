@@ -13,7 +13,11 @@ export default async function RootLayout({
 }>) {
   const loggedIn = await getLoggedInUser();
 
-  if (!loggedIn) redirect("/");
+  // Redirect to the sign-in page if the user is not logged in
+  if (!loggedIn) {
+    redirect("/sign-in");
+    return null; // Ensure the component does not render further after redirect
+  }
 
   return (
     <main className="flex h-screen w-full font-inter">

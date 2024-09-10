@@ -1,4 +1,3 @@
-import React from "react";
 import HeaderBox from "@/components/HeaderBox";
 import TotalBalanceBox from "@/components/TotalBalanceBox";
 import RightSidebar from "@/components/RightSidebar";
@@ -6,10 +5,17 @@ import { getLoggedInUser } from "@/lib/actions/user.actions";
 import { getAccounts } from "@/lib/actions/bank.actions";
 import { getAccount } from "@/lib/actions/bank.actions";
 import RecentTransactions from "@/components/RecentTransactions";
+import { redirect } from "next/navigation";
 
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   const currentPage = Number(page as string) || 1;
   const loggedIn = await getLoggedInUser();
+
+  // Handle case where user is not logged in
+  if (!loggedIn) {
+    return <p>Redirecting to sign-in...</p>; // Placeholder while redirecting
+  }
+
   const accounts = await getAccounts({
     userId: loggedIn.$id,
   });

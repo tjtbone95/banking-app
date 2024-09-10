@@ -22,7 +22,6 @@ import CustomInput from "./CustomInput";
 import { authFormSchema } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { signIn, signUp } from "@/lib/actions/user.actions";
-import { getLoggedInUser } from "@/lib/actions/user.actions";
 import PlaidLink from "./PlaidLink";
 
 const AuthForm = ({ type }: { type: string }) => {
